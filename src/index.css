@@ -1,0 +1,256 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Caminho de Luz Design System - Cores Espirituais */
+    --background: 0 0% 100%;
+    --foreground: 216 47% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 47% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 47% 12%;
+
+    /* Azul profundo - Confiança */
+    --primary: 216 47% 12%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 217 32% 17%;
+    --primary-lighter: 217 25% 25%;
+
+    /* Tons neutros suaves */
+    --secondary: 210 20% 96%;
+    --secondary-foreground: 216 47% 12%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Dourado - Espiritualidade */
+    --gold: 43 74% 66%;
+    --gold-light: 43 84% 76%;
+    --gold-dark: 43 64% 56%;
+    --gold-foreground: 216 47% 12%;
+
+    /* Cores de apoio */
+    --accent: 43 74% 66%;
+    --accent-foreground: 216 47% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 43 74% 66%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 216 47% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 216 47% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 216 47% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 43 74% 66%;
+    --primary-foreground: 216 47% 12%;
+
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 43 74% 66%;
+    --accent-foreground: 216 47% 12%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 43 74% 66%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Gradientes espirituais e coloridos */
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+}
+
+.gradient-gold {
+  background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
+}
+
+.gradient-hero {
+  background: linear-gradient(135deg, 
+    hsl(var(--background)) 0%, 
+    hsl(var(--secondary)) 40%,
+    hsl(var(--gold) / 0.05) 100%
+  );
+}
+
+.gradient-soft {
+  background: linear-gradient(145deg, 
+    hsl(var(--background)) 0%, 
+    hsl(var(--secondary) / 0.3) 50%,
+    hsl(var(--primary) / 0.05) 100%
+  );
+}
+
+.gradient-divine {
+  background: linear-gradient(135deg, 
+    hsl(var(--gold) / 0.1) 0%,
+    hsl(var(--primary) / 0.05) 50%,
+    hsl(var(--background)) 100%
+  );
+}
+
+.gradient-testimonial {
+  background: linear-gradient(145deg, 
+    hsl(var(--background)) 0%, 
+    hsl(var(--gold) / 0.02) 100%
+  );
+}
+
+/* Animações suaves */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Sombras espirituais */
+.shadow-soft {
+  box-shadow: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+}
+
+.shadow-gold {
+  box-shadow: 0 8px 30px -8px hsl(var(--gold) / 0.3);
+}
+
+.shadow-divine {
+  box-shadow: 0 10px 40px -10px hsl(var(--primary) / 0.15), 0 0 0 1px hsl(var(--border));
+}
+
+.shadow-elevated {
+  box-shadow: 0 20px 60px -10px hsl(var(--primary) / 0.12), 0 8px 25px -5px hsl(var(--gold) / 0.1);
+}
+
+.shadow-glow {
+  box-shadow: 0 0 30px hsl(var(--gold) / 0.2);
+}
+
+/* Estilos responsivos para mobile */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .mobile-text-balance {
+    text-wrap: balance;
+  }
+  
+  .mobile-spacing {
+    margin-bottom: 1rem;
+  }
+
+  /* Ajustes específicos para seções */
+  section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Melhor espaçamento para cards */
+  .grid > div {
+    margin-bottom: 1rem;
+  }
+}
